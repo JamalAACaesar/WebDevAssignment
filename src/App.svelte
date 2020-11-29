@@ -319,19 +319,19 @@
 
 			<ul class="socials">
 				<li>
-					<a href="https://facebook.com/" target="_blank">
+					<a href="https://facebook.com/xjay.anferneex" target="_blank">
 						<i class="fab fa-facebook"></i>
 					</a>
 				</li>
 
 				<li>
-					<a href="https://instagram.com/" target="_blank">
+					<a href="https://instagram.com/raseac_kn" target="_blank">
 						<i class="fab fa-instagram"></i>
 					</a>
 				</li>
 
 				<li>
-					<a href="https://linkedin.com/" target="_blank">
+					<a href="https://linkedin.com/in/jamalcaesar" target="_blank">
 						<i class="fab fa-linkedin"></i>
 					</a>
 				</li>
