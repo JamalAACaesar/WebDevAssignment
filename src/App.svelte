@@ -5,7 +5,9 @@
 
 	const cover = "https://unsplash.com/photos/6SMF42-JTAc/download?force=true&w=1920"
 
-	const heroText = "Welcome to Our Gourmet Restaurant"
+	const heroText = "Welcome to Caesar's Gourmet"
+	const heroDesc = "Where your every sweet tooth desire will be fulfilled!"
+	// const heroDesc = "Here are Caesar's Gourmet, we make the finest deserts for people to not just fulfil their sweet tooth desire, but fill their stomach with our pastries."
 
 	const gallery = [
 		"https://unsplash.com/photos/aFMylf801v0/download?force=true&w=1920",
@@ -20,8 +22,12 @@
 </script>
 
 <style>
+	section {
+		padding: 2.5em 0;
+	}
+
 	section .headline h2 {
-		padding: 2em 0 1em;
+		padding: 0 0 1em;
 
 		font-size: 1.85rem;
 		text-align: center;
@@ -45,9 +51,20 @@
 		justify-content: space-between;
 	}
 
+	.menu .logo {
+		display: flex;
+		align-items: center;
+	}
+
 	.menu .logo img {
-	    height: 100%;
+	    height: 2.5em;
 	    object-fit: contain;
+	}
+
+	@media (max-width: 768px) {
+		#hero {
+			height: 100vh;
+		}
 	}
 
 	.menu ul {
@@ -63,12 +80,19 @@
 	}
 
 	.menu ul li a {
-		color: rgba(255, 255, 255, 0.8);
+		color: #fff;
 		text-decoration: none;
+		font-family: "Nunito", sans-serif;
+	}
+
+	@media (max-width: 768px) {
+		.menu ul li a {
+			font-size: 0.85rem;
+		}
 	}
 
 	.menu ul li a:hover {
-		color: #fff;
+		font-weight: bold;
 	}
 
 	/* MENU END */
@@ -84,6 +108,18 @@
 		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 	}
 
+	@media (max-width: 768px) {
+		#hero {
+			height: 100vh;
+		}
+	}
+
+	@media (max-width: 768px) and (max-height: 420px) {
+		#hero {
+			height: 100vh;
+		}
+	}
+
 	#hero:before {
 		content: '';
 		width: 100%;
@@ -91,7 +127,7 @@
 		top: 0;
 		left: 0;
 		position: absolute;
-		background-color: rgba(34, 34, 34, 0.55);
+		background-color: rgba(34, 34, 34, 0.65);
 	}
 
 	/* #hero .preview {
@@ -112,15 +148,27 @@
 		top: 50%;
 
 		position: absolute;
+		transform: translateY(-50%);
 
 		text-align: center;
 	}
 
 	#hero .info h1 {
 		color: #fff;
-		font-size: 1.8rem;
+		font-size: 30px;
+		letter-spacing: 1.5px;
 		text-transform: uppercase;
+		text-decoration: underline;
 		font-family: 'Montserrat', sans-serif;
+	}
+
+	#hero .info p {
+		margin-top: .7em;
+
+		color: #fff;
+		font-size: 20px;
+		font-family: "Nunito", sans-serif;
+		word-wrap: break-word;
 	}
 
 	@media (max-width: 540px) {
@@ -132,7 +180,7 @@
 	/* HERO END */
 
 	#gallery { 
-		background-color: #E7D7F4;
+		/* background-color: #E7D7F4; */
 	}
 
 	#grid {
@@ -184,6 +232,38 @@
 			min-width: 0;
 		}
 	}
+
+	footer {
+		padding: 3em 0;
+
+		text-align: center;
+
+		font-family: "Nunito", sans-serif;
+
+		background-color: #fff;
+	}
+
+	footer p {
+		/* font-size: 1.2rem; */
+
+		/* text-transform: uppercase; */
+	}
+
+	footer i {
+		font-size: 1.25em;
+	}
+
+	footer .socials {
+		margin-top: 1em;
+		/* display: flex; */
+	}
+
+	footer .socials li {
+		display: inline-block;
+	    margin: 0 .5em;
+		list-style: none;
+
+	}
 </style>
 
 
@@ -201,9 +281,6 @@
 				<li>
 					<a href="#gallery">Gallery</a>
 				</li>
-				<li>
-					<a href="#contact">Contact</a>
-				</li>
 			</ul>
 		</nav>
 
@@ -212,6 +289,7 @@
 
 			<div class="info">
 				<h1>{heroText}</h1>
+				<p>{heroDesc}</p>
 			</div>
 		</div>
 	</header>
@@ -220,7 +298,7 @@
 		<section id="gallery">
 			<div class="container">
 				<div class="headline">
-					<h2>Our Gallery</h2>
+					<h2>Our Popular Dishes</h2>
 				</div>
 	
 				<ul id="grid">
@@ -232,11 +310,32 @@
 				</ul>
 			</div>
 		</section>
-
-		<section id="contact"></section>
 	</main>
 
-	<footer>
 
+	<footer id="footer">
+		<div class="container">
+			<p>Copyright &copy; Caesar's Gourmet</p>
+
+			<ul class="socials">
+				<li>
+					<a href="https://facebook.com/" target="_blank">
+						<i class="fab fa-facebook"></i>
+					</a>
+				</li>
+
+				<li>
+					<a href="https://instagram.com/" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</li>
+
+				<li>
+					<a href="https://linkedin.com/" target="_blank">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</footer>
 </div>
