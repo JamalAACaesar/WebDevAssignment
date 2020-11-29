@@ -1,7 +1,7 @@
 <script>
 	export let name;
 
-	const logo = "https://brainrain.com.ua/wp-content/uploads/2016/11/intel-company-logo-png-hd-sk.png"
+	const logo = "/logo.png"
 
 	const cover = "https://unsplash.com/photos/6SMF42-JTAc/download?force=true&w=1920"
 
@@ -14,27 +14,35 @@
 		"https://unsplash.com/photos/sxIVqaksdfE/download?force=true&w=1920",
 		"https://unsplash.com/photos/cKJ8ZxQ2bC8/download?force=true&w=1920",
 		"https://unsplash.com/photos/FtWQhwpe1qc/download?force=true&w=1920",
-		"https://unsplash.com/photos/hw5kIbrdmBc/download?force=true&w=1920",
+		"https://unsplash.com/photos/hV1gChgMa-k/download?force=true&w=1920",
 		"https://unsplash.com/photos/pKXH6nqeZtg/download?force=true&w=1920",
 	]
 </script>
 
 <style>
-	section .headline h2 { 
+	section .headline h2 {
+		padding: 2em 0 1em;
+
 		font-size: 1.85rem;
 		text-align: center;
 		font-family: "Poppins", sans-serif;
 
-		letter-spacing: 2px;
+		letter-spacing: 3px;
 		text-transform: uppercase;
 	}
 
 	/* MENU START */
 	.menu {
-	    display: flex;
-	    height: 60px;
+		margin: 1em;
 
-	    /* background: #ccc; */
+		left: 0;
+		right: 0;
+		z-index: 10;
+		position: absolute;
+
+	    display: flex;
+		height: 60px;
+		justify-content: space-between;
 	}
 
 	.menu .logo img {
@@ -55,7 +63,12 @@
 	}
 
 	.menu ul li a {
+		color: rgba(255, 255, 255, 0.8);
 		text-decoration: none;
+	}
+
+	.menu ul li a:hover {
+		color: #fff;
 	}
 
 	/* MENU END */
@@ -64,7 +77,7 @@
 
 	#hero {
 		position: relative;
-		height: 60vh;
+		height: 50vh;
 
 
 		background-color: rgba(34, 34, 34, 0.55);
@@ -118,18 +131,58 @@
 
 	/* HERO END */
 
-	#gallery .grid {
-		display: grid;
-		grid: auto-flow dense auto / repeat(auto-fit, minmax(300px, 1fr));
+	#gallery { 
+		background-color: #E7D7F4;
 	}
 
-	#gallery .image img {
-		width: 100%;
-		height: 100%;
+	#grid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#grid li {
+		height: 40vh;
+		flex-grow: 1;
+	}
+
+	#grid li:last-child {
+		flex-grow: 10;
+	}
+
+	#grid img {
+		max-height: 100%;
+		min-width: 100%;
 		object-fit: cover;
+		vertical-align: bottom;
+		box-shadow: -2px 2px 10px 0px #ccc;
 	}
 
-	@media (min-width: 640px) {
+	@media (max-aspect-ration: 1/1) {
+		#grid li {
+			height: 30vh;
+		}
+	}
+
+	@media (max-height: 480px) {
+		#grid li {
+			height: 80vh;
+		}
+	}
+
+	@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+		#grid {
+			flex-direction: row;
+		}
+
+		#grid li {
+			height: auto;
+			width: 100%;
+		}
+		#grid img {
+			width: 100%;
+			max-height: 75vh;
+			min-width: 0;
+		}
 	}
 </style>
 
@@ -170,13 +223,13 @@
 					<h2>Our Gallery</h2>
 				</div>
 	
-				<div class="grid">
+				<ul id="grid">
 					{#each gallery as pic, index (index)}
-						<div class="image">
-						<img src="{pic}" alt="Picture {index + 1}">
-						</div>
+						<li>
+							<img src="{pic}" alt="Picture {index + 1}">
+						</li>
 					{/each}
-				</div>
+				</ul>
 			</div>
 		</section>
 
