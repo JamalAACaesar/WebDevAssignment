@@ -422,8 +422,8 @@
 
 	table {
 		background:  #ac72ac;
-		width: 450px;
-		height: 300px;
+		width: 300px;
+		height: 200px;
 
 		margin: 0 auto;
 		border-collapse: collapse;
@@ -486,7 +486,7 @@
 			<div class="container">
 				<div class="headline">
 					<h2>Today's Specials</h2>
-					<p style="text-align: center; margin-bottom: 20px; font-family: Poppins, sans-serif;"> Choose from one of our special desserts for just today!</p>
+					<p style="text-align: center; margin-bottom: 20px; font-family: Poppins, sans-serif;"> Order one of our special desserts for just today!</p>
 				</div>
 
 				<table>
